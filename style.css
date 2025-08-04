@@ -19,7 +19,7 @@ body {
 
 .photo {
   scroll-snap-align: start;
-  height: 100vh;
+  height: var(--vh, 100vh);
   width: 100%;
   position: relative;
   display: flex;
@@ -51,6 +51,7 @@ body {
 
 .title-screen {
   background-color: black;
+  height: var(--vh, 100vh);
 }
 
 .intro-title {
@@ -83,7 +84,7 @@ body {
   padding: 3rem 2rem;
   text-align: center;
   scroll-snap-align: start;
-  height: 100vh;
+  height: var(--vh, 100vh);
   position: relative;
 }
 
@@ -94,7 +95,7 @@ body {
 .closing-content h2 {
   font-family: 'Bodoni Moda', serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: white;
 }
