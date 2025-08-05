@@ -21,22 +21,22 @@
     </section>
 
     <!-- Photo sections -->
-    <section class="photo">
+    <section class="photo photo-section">
       <img src="images/IMG_0028.JPG" alt="Louis Vuitton, Prague 2021" />
       <div class="photo-caption">Louis Vuitton, Prague 2021</div>
     </section>
 
-    <section class="photo">
+    <section class="photo photo-section">
       <img src="images/IMG_0254.JPG" alt="Louis Vuitton, Prague 2021" />
       <div class="photo-caption">Louis Vuitton, Prague 2021</div>
     </section>
 
-    <section class="photo">
+    <section class="photo photo-section">
       <img src="images/IMG_0256.JPG" alt="Christian Dior, Prague 2021" />
       <div class="photo-caption">Christian Dior, Prague 2021</div>
     </section>
 
-    <section class="photo">
+    <section class="photo photo-section">
       <img src="images/IMG_0712.jpg" alt="Christian Dior, Prague 2022" />
       <div class="photo-caption">Christian Dior, Prague 2022</div>
     </section>
@@ -52,5 +52,26 @@
       </div>
     </section>
   </main>
+
+  <!-- Shuffle images on every load -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const gallery = document.querySelector('main.gallery');
+      const photoSections = Array.from(document.querySelectorAll('.photo-section'));
+  
+      // Shuffle function
+      for (let i = photoSections.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [photoSections[i], photoSections[j]] = [photoSections[j], photoSections[i]];
+      }
+  
+      // Re-insert shuffled sections (after title, before closing card)
+      const closingCard = document.querySelector('.closing-card');
+      photoSections.forEach(section => {
+        gallery.insertBefore(section, closingCard);
+      });
+    });
+  </script>
+
 </body>
 </html>
